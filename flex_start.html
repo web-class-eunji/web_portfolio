@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex_start</title>
+  <style>
+    div {
+      padding: 4px;
+      border: 1px solid red
+    }
+
+    .start_box {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+    }
+
+    .flex-start {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <h2>align-content: start</h2>
+      <div class=start_box>
+        <div>start-item</div>
+        <div>start-item</div>
+      </div>
+    </li>
+    <br>
+    <li>
+      <h2>align-content: flex-start</h2>
+      <div class=flex-start>
+        <div>flex-start-item</div>
+        <div>flex-start-item</div>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>
