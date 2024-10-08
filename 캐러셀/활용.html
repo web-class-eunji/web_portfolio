@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="[3]creatSlider.css">
+  <script src="createSlider.js"></script>
+  <style>
+    .container {
+      width: 1200px;
+    }
+    .my-slider {
+      width: 100%;
+      height: 700px;
+    }
+
+    .contents {
+      background-color: pink;
+      /* width: 100px; */
+    }
+
+    .sbs-slider-container {
+      position: relative;
+      /* width: fit-content; */
+      margin-bottom: 28px;
+    }
+
+    .sbs-slider {
+      /* width: 500px;
+    height: 200px; */
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .sbs-content-wrapper {
+      display: flex;
+      transition: 0.5s;
+      height: 100%;
+
+    }
+
+    .sbs-content {
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .sbs-controls {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+
+    .sbs-controls>.sbs-buttons {
+      display: flex;
+      gap: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(100% + 8px);
+
+    }
+
+    .sbs-radio-button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: gray;
+      cursor: pointer;
+    }
+
+    .sbs-radio-button.sbs-active {
+      background-color: pink;
+    }
+
+    .sbs-prev {
+      position: absolute;
+      left: 4px;
+      bottom: 4px;
+    }
+
+    .sbs-next {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="my-slider">
+      <div class="contents">1</div>
+      <div class="contents">2</div>
+      <div class="contents">3</div>
+      <div class="contents">4</div>
+      <div class="contents">5</div>
+      <div class="contents">6</div>
+      <div class="contents">7</div>
+      <div class="contents">8</div>
+    </div>
+  </div>
+
+
+  <script>
+    const mySlider = document.querySelector('.my-slider');
+
+    createSlider(mySlider, 3, 10, 300, true)
+
+  </script>
+</body>
+
+</html>
