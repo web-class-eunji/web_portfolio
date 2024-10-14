@@ -1,0 +1,663 @@
+body {
+    font-family: "Gowun Batang", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body > section {
+    padding: 0 32px;
+}
+
+header {
+    padding: 0 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    background-image: url(../img/image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+footer {
+    padding: 0 32px;
+    background-color:#072e2c;
+}
+
+.web-header {
+    height: 100px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    border-bottom: 0.1px solid rgb(255,255,255,0.5);
+}
+
+.web-header a {
+    color: white;
+}
+
+.web-header a:hover {
+    color: gray;
+}
+
+nav > ul {
+
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-logo {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-container {
+    height: 100vh;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.main-container-explain {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+
+}
+
+.main-box {
+
+    border-top: 5px solid white;
+    border-left: 1px solid white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 60px;
+    box-sizing: border-box;
+    
+}
+
+h1 {
+    font-size: 56px;
+    color: white;
+}
+
+.main-box > p {
+    font-size: 20px;
+    color: white;
+}
+
+.main-sub-explain {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.main-sub-explain > p {
+    text-align: right;
+}
+
+.main-img-wrapper {
+    padding: 5px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    width: 380px;
+}
+
+.main-img > img {
+    object-fit: contain;
+}
+
+
+.about {
+    background-color: #f2f4ef;
+}
+
+.about {
+    padding: 50px 32px; 
+}
+
+.brand-explain {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #003331;
+}
+
+h2 {
+    font-size: 38px;
+    color: #003331;
+}
+
+.sub-title {
+    font-size: 16px;
+    color: #609f1c;
+}
+
+.brand-explain-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.brand-detail-explain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+}
+
+.brand-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 80px 0;
+
+}
+
+.brand-summary p:first-child {
+    font-size: 16px;
+    line-height: 25px;
+    color: #222;
+}
+
+.brand-summary p:last-child {
+    font-size: 18px;
+    color:#222;
+}
+
+.best-item-container {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.best-seller {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.best-seller-pack li {
+    flex: 1 1 0;
+    /* 
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    flex-basis 값을 0 으로 설정하여 기본 넓이를 없게하면 동일한 크기 자식요소를 만들 수 있다. */
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.best-seller button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+/* 비포 에프터로 하면 좋겠다고 하셨음. */
+
+.best-seller-furniture-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.best-seller-furniture {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.best-seller-furniture:hover {
+    box-shadow: 3px 3px 5px #d0cfcf;
+    transition: 0.3s;
+}  
+
+h5 {
+    font-size: 16px;
+    color: #222;
+    text-align: center;
+}
+
+.best-seller-furniture-name p {
+    font-size: 12px;
+    color: #222;
+}
+
+#showroom {
+    padding: 100px 32px;
+    position: relative;
+}
+
+#showroom::before {
+    content: '';
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0%;
+    left: -5%;
+    z-index: -1;
+    background-image: url(../img/showroom\ 나뭇잎.png);
+    background-size: contain;
+    transform: rotate(80deg);
+}
+
+#showroom::after {
+    content: '';
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: -3%;
+    right: 4%;
+    z-index: -1;
+    background-image: url(../img/showroom\ 나뭇잎.png);
+    background-size: contain;
+    transform: rotate(200deg);
+}
+
+.showroom-introduce {
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 100px;
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.explain-showroom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.explain-showroom figure {
+    width: 50%;
+}
+
+.showroom-address {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bamgasi {
+    text-align: end;
+}
+
+.showroom-bamgasi-inform {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 45px;
+    height: 450px;
+    position: relative;
+}
+
+.showroom-bamgasi-inform::before {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 90%;
+}
+
+.showroom-bamgasi-inform::after {
+    content: '';
+    width: 300px;
+    height: 1px;
+    background: #000;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: rotate(270deg);
+    top: 34%;
+    margin-left: 50px;
+}
+
+.showroom-address p {
+    color: #222;
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+.showroom-garage-inform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 450px;
+
+    gap: 45px;
+    position: relative;
+}
+
+.showroom-garage-inform::before {
+    content: '';
+    width: 81px;
+    height: 3px;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 92%;
+}
+
+.showroom-garage-inform::after {
+    content: '';
+    width: 300px;
+    height: 1px;
+    background: #000;
+    display: block;
+    position: absolute;
+    right: 50%;
+    transform: rotate(270deg);
+    top: 34%;
+    margin-right: 50px;
+}
+
+.more-view button {
+    background-color:white;
+    border-width: 0.5px;
+    font-size: 14px;
+    font-family: "Gowun Batang", serif;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 3px;
+    border-color: rgba(245, 241, 241, 0.493);
+}
+
+.more-view button:hover {
+    background-image: linear-gradient(0deg, rgb(246, 245, 245),white);
+    /* background-image: linear-gradient(to right, red, yellow); */
+
+    transition: 0.3s;
+
+}
+
+button > a {
+    color: #333;
+    width: 160px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+ }
+
+
+#with-furniture {
+    background-color: #edf1e9;
+    background-image: url(../img/with-furniture-꽃.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.with-furniture-container {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.with-furniture-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.with-furniture-content li {
+    background-color: white;
+    width: 250px;
+    aspect-ratio: 5/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.with-furniture-icons img {
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.with-furniture-icons a {
+    width: 250px;
+    height: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #555;
+    
+}
+
+.with-furniture-icons a:hover {
+    background-color: rgb(230, 224, 224);
+    transition: 0.5s;
+}
+
+.with-furniture-icons h5 {
+    color: #555;
+}
+
+.with-furniture-icons p:last-child {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+#footer {
+    padding: 50px 32px;
+}
+
+.footer-container {
+    width: 1200px;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.footer-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.footer-logo {
+    font-size: 22px;
+    text-decoration: underline;
+    color: white;
+    
+}
+
+.footer-id-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.footer-id-container div {
+    display: flex;
+
+}
+
+.footer-id-inform {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.footer-id-container div p:last-child {
+    font-size: 12px;
+    color: white;
+    font-weight: 400;
+    line-height: 16px;
+
+}
+
+.footer-customer-center {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+.footer-customer-center p {
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.footer-customer-center p:first-child {
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+.footer-customer-center p:nth-child(2n){
+    font-size: 16px;
+}
+
+/* .footer-customer-center p:last-child {
+    font-size: 12px;
+    line-height: 18px;
+} */
+
+.search {
+    display: flex;
+    gap: 10px;
+}
+
+.customer-center-search {
+    border: 1px solid white;
+    border-radius: 50px;
+    height: 20px;
+    width: 120px;
+}
+
+.footer-icons {
+    width: 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.footer-bottom a {
+    color: white;
+    font-weight: 400;
+
+    font-size: 12px;
+}
+
+
+
+/* 반응형 */
+
+@media screen and (max-width:1365) {
+    
+}
+
+
+@media screen and (max-width:767) {
+    section {
+        padding: 0 20px;
+    }
+}
