@@ -1,0 +1,86 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    padding: 0;
+}
+
+.carousel-item {
+    flex: 1 0 25%; /* 기본적으로 4개를 표시 */
+    padding: 10px;
+    box-sizing: border-box;
+    width: 290px;
+    list-style: none;
+    text-align: center;
+}
+
+.carousel-item > figure {
+    margin: 0;
+}
+
+.carousel-item > figure > img {
+    width: 280px;
+    height: auto;
+}
+
+@media (max-width: 1400px) {
+    .carousel-item {
+        flex: 1 0 50%; /* 2개를 표시 */
+    }
+}
+
+@media (max-width: 760px) {
+    .carousel-item {
+        flex: 1 0 100%; /* 1개를 표시 */
+    }
+}
+
+/* 버튼 스타일 */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* 닷 스타일 */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: gray;
+}
