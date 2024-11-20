@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 애니메이션 효과 추가 */
+        .animated-circle {
+            stroke-dasharray: 1131;
+            /* 원 둘레: 2 * π * r (r=180) */
+            stroke-dashoffset: 1131;
+            /* 초기값: 원이 보이지 않음 */
+            animation: draw 1.5s linear forwards;
+            /* 2초 동안 선을 그리며 애니메이션 실행 */
+            transform: rotate(-90deg);
+            /* 시작 지점을 위쪽(12시 방향)으로 설정 */
+            transform-origin: center;
+        }
+
+        .animated-circle.circle-1 {
+            animation-delay: 0s;
+        }
+
+        .animated-circle.circle-2 {
+            animation-delay: 0.5s;
+        }
+
+        .animated-circle.circle-3 {
+            animation-delay: 1s;
+        }
+
+        /* 애니메이션 정의 */
+        @keyframes draw {
+            from {
+                stroke-dashoffset: 1131;
+                /* 원이 감춰진 상태 */
+            }
+
+            to {
+                stroke-dashoffset: 0;
+                /* 원이 완전히 그려진 상태 */
+            }
+        }
+
+        .pursue-circle {
+            position: relative;
+            display: inline-block;
+            width: 364px;
+            height: 364px;
+        }
+
+        .circle-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #151515;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pursue-circle">
+        <svg width="364" height="364" viewBox="0 0 364 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 첫 번째 원 -->
+            <circle cx="182" cy="182" r="180" stroke="#151515" stroke-width="3" class="animated-circle circle-1" />
+        </svg>
+        <div class="circle-text">Sensitive</div>
+    </div>
+    <div class="pursue-circle">
+        <svg width="364" height="364" viewBox="0 0 364 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 두 번째 원 -->
+            <circle cx="182" cy="182" r="180" stroke="#151515" stroke-width="3" class="animated-circle circle-2" />
+        </svg>
+        <div class="circle-text">Creative</div>
+    </div>
+    <div class="pursue-circle">
+        <svg width="364" height="364" viewBox="0 0 364 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 세 번째 원 -->
+            <circle cx="182" cy="182" r="180" stroke="#151515" stroke-width="3" class="animated-circle circle-3" />
+        </svg>
+        <div class="circle-text">Balanced</div>
+    </div>
+
+
+
+</body>
+
+</html>
