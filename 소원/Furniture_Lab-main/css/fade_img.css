@@ -1,0 +1,27 @@
+.brand-explain-content {
+  position: relative;
+}
+
+.fade-slides {
+  position: relative;
+  width: 580px;
+  height: 580px;
+  z-index: 97;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 616px;
+  height: 440px;
+  opacity: 0;
+  z-index: 1;
+  transition: 1s;
+  box-sizing: border-box;
+}
+
+.showing {
+  opacity: 1;
+  z-index: 98;
+}

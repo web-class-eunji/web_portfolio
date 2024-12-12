@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <!-- 밑에 스타일이 있는데 또있는걸까용? -->
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +18,7 @@
         <link rel="stylesheet" href="css/scroll_fade_in.css" />
         <link rel="stylesheet" href="css/carousel.css" />
         <link rel="stylesheet" href="css/media.css" />
-        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/fade_img.css">
     </head>
 
     <body>
@@ -150,16 +151,12 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- <div class="brand-img fade-slides content fade to-left">
-                            <img class="slide showing" src="img/aboutus.jpg" alt="">
+                        <div class="fade-slides content fade to-left">
+                            <img class="slide showing" src="img/aboutus.png" alt="">
                             <img class="slide" src="img/aboutus2.png" alt="">
-                            <img class="slide" src="img/aboutus3.png" alt="">
-                        </div> -->
-                        <div class="brand-img fade-slides content">
-                            <img class="slide showing" src="img/aboutus4.png" alt="">
-                            <img class="slide" src="img/aboutus2.png">
-                            <img class="slide" src="img/aboutus3.png" alt="">
-                            
+                            <img class="slide" src="./img/aboutus3.png" alt="">
+                            <img class="slide" src="./img/aboutus4.png" alt="">
+                            <!-- 사진 3개 페이드인으로 들어갈거 -->
                         </div>
                     </div>
                 </div>
@@ -173,7 +170,6 @@
                 <div class="carousel-container">
                     <button class="prev-btn">&lt;</button>
                     <button class="next-btn">&gt;</button>
-       
                     <ul class="carousel">
                         <li class="carousel-item">
                             <figure class="best-seller-furniture">
@@ -445,5 +441,6 @@
         <script src="JS/scroll_fade_in.js"></script>
         <script src="JS/media_header.js"></script>
         <script src="JS/slider.js"></script>
+        <script src="JS/fade-slides.js"></script>
     </body>
 </html>
