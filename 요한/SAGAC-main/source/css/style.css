@@ -1,45 +1,21 @@
 @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
 
 body {
-    overflow: hidden;
-}
-
-#wrap {
-    transform: translateY(100%);
+    background-color: #000002;
 }
 
 #intro-section {
-    background-color: #000002;
     height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-    position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-.scrolled #intro-section {
-    transform: translateY(-100%);
-}
-
-.scroll-disabled {
-    overflow-y: hidden;
-}
-
-.scroll-enabled {
-    overflow-y: auto;
-}
-
-#weare-section {
-    padding: 80px 32px;
 }
 
 #value-section,
 #practice-section,
-#output-section {
-    padding: 150px 32px;
+#output-section,
+#weare-section {
+    padding: 180px 32px;
 }
 
 #value-section {
@@ -52,6 +28,7 @@ body {
     padding-left: 32px;
     padding-right: 32px;
     overflow: hidden;
+    position: relative;
 }
 
 .section-container {
@@ -63,6 +40,10 @@ body {
     align-items: center;
 }
 
+.section-container.end {
+    position: relative;
+}
+
 header {
     padding: 16px 32px;
     position: fixed;
@@ -72,14 +53,6 @@ header {
     width: 100%;
     box-sizing: border-box;
     z-index: 99;
-}
-
-header.scrolled g path {
-    fill: #151515;
-}
-
-header.scrolled .hamburger path {
-    fill: #151515;
 }
 
 .hamburger:hover path {
@@ -108,13 +81,12 @@ header.scrolled .hamburger path {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vh;
     height: 100vh;
     overflow: hidden;
 }
 
 .intro-video {
-    width: 60vw;
+    width: 90vw;
     max-width: 800px;
     height: auto;
     max-height: 800px;
@@ -128,6 +100,7 @@ header.scrolled .hamburger path {
     overflow: hidden;
     white-space: nowrap;
     padding: 8px 0;
+    z-index: 50;
 }
 
 .flowing-text-area.end {
@@ -136,11 +109,11 @@ header.scrolled .hamburger path {
 
 .flowing-text-wrap {
     display: inline-flex;
-    animation: flow 60s linear infinite;
+    animation: flow 35s linear infinite;
 }
 
-.flowing-text-wrap.end > .flowing-text {
-    color: #151515;
+.flowing-text-wrap.end>.flowing-text {
+    color: #fff;
 }
 
 .flowing-text {
@@ -153,12 +126,14 @@ header.scrolled .hamburger path {
 
 @keyframes flow {
     0% {
-        -webkit-transform: translate3d(0, 0, 0); /* 구형 브라우저 호환 */
+        -webkit-transform: translate3d(0, 0, 0);
+        /* 구형 브라우저 호환 */
         transform: translate3d(0, 0, 0);
     }
 
     100% {
-        -webkit-transform: translate3d(-50%, 0, 0); /* 구형 브라우저 호환 */
+        -webkit-transform: translate3d(-50%, 0, 0);
+        /* 구형 브라우저 호환 */
         transform: translate3d(-50%, 0, 0);
     }
 }
@@ -178,10 +153,12 @@ header.scrolled .hamburger path {
 }
 
 .section-title-img {
-    width: 693px;
-    height: 74px;
+    width: 100%;
+    max-width: 693px;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
+    aspect-ratio: 693 / 74;
 }
 
 .section-title.weare .section-title-img {
@@ -217,9 +194,7 @@ header.scrolled .hamburger path {
 
 .pursue-circle {
     position: absolute;
-    display: inline-block;
-    width: 364px;
-    height: 364px;
+    height: 100%;
 }
 
 .circle-text {
@@ -229,8 +204,19 @@ header.scrolled .hamburger path {
     transform: translate(-50%, -50%);
     font-size: 40px;
     font-weight: bold;
-    color: #151515;
     text-align: center;
+    color: #FFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+
+:root {
+    --svg1-size: 360;
+    --svg2-size: 270;
+     /* 기본 뷰박스 크기 */
+    --svg1-stroke-width: 3;
+    --svg2-stroke-width: 50;
+     /* animate-circle의 stroke-width 초기값 */
 }
 
 .animated-circle {
@@ -239,11 +225,10 @@ header.scrolled .hamburger path {
     animation: draw 1.5s linear forwards;
     transform: rotate(-90deg); /* 시작 지점을 위쪽(12시 방향)으로 설정 */
     transform-origin: center;
-    animation-play-state: paused; /* 기본적으로 애니메이션 정지 상태 */
 }
 
-.animated-circle.draw-start {
-    animation-play-state: running; /* 스크롤로 화면에 들어오면 애니메이션 시작 */
+.animated-circle.count {
+    animation: draw 2.5s linear forwards;
 }
 
 .animated-circle.circle-1 {
@@ -256,6 +241,24 @@ header.scrolled .hamburger path {
 
 .animated-circle.circle-3 {
     animation-delay: 1s;
+}
+
+.pursue-circle-box.draw-start .animated-circle {
+    animation-play-state: running;
+}
+
+.pursue-circle-box:not(.draw-start) .animated-circle {
+    animation: none;
+    /* 뷰에서 벗어나면 초기화 */
+}
+
+.count-area.draw-start .animated-circle {
+    animation-play-state: running;
+}
+
+.count-area:not(.draw-start) .animated-circle {
+    animation: none;
+    /* 뷰에서 벗어나면 초기화 */
 }
 
 @keyframes draw {
@@ -292,13 +295,15 @@ header.scrolled .hamburger path {
 .pursue-introduce h2 {
     font-size: 32px;
     font-weight: bold;
+    color: #fff;
 }
 
 .pursue-introduce p {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
     line-height: 26px;
+    color: #ffffffd2;
 }
 
 .value-area {
@@ -356,17 +361,20 @@ header.scrolled .hamburger path {
 .value-article-title h2 {
     font-size: 48px;
     font-weight: bold;
+    color: #FF1493;
 }
 
 .value-article-title p {
     font-size: 16px;
     font-weight: 500;
+    color: #ffffffd2;
 }
 
 .value-article-text {
     font-size: 20px;
-    line-height: 28px;
-    font-weight: 600;
+    line-height: 30px;
+    font-weight: 500;
+    color: #fff;
 }
 
 .value-article-title.growth,
@@ -386,6 +394,46 @@ header.scrolled .hamburger path {
     flex: 1 1 48%;
     max-width: 918px;
     height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.practice-article-title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.practice-article-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FF1493;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.practice-article-title-wrap:hover .practice-article-title {
+    color: #FFF;
+}
+
+.learn-more-btn{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: 3px solid white;
+    border-radius: 50px;
+    padding: 10px 24px;
+    width: auto;
+    transition: background-color 0.3s;
+    box-shadow: 1px 1px 14px rgba(255, 255, 255, 0.3);
+}
+
+.learn-more-btn:hover{
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .practice-area figure {
@@ -397,6 +445,13 @@ header.scrolled .hamburger path {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.practice-area figure:hover {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 }
 
 .practice-area video {
@@ -406,8 +461,25 @@ header.scrolled .hamburger path {
     object-position: center;
 }
 
-.practice-area h2 {
-    display: none;
+.hover-text {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+    line-height: 56px;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+.practice-area figure:hover + .hover-text {
+    opacity: 1;
 }
 
 .painting figure {
@@ -435,7 +507,7 @@ header.scrolled .hamburger path {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 56px;
 }
 
 .count-type {
@@ -448,15 +520,17 @@ header.scrolled .hamburger path {
 .count-type h2 {
     font-size: 32px;
     font-weight: 600;
+    color: #FF1493;
 }
 
 .count-type p {
     font-size: 20px;
+    color: #ffffffd2;
 }
 
 .count-img {
-    width: 120px;
-    height: 120px;
+    width: 72px;
+    height: 72px;
     background-size: cover;
 }
 
@@ -473,33 +547,112 @@ header.scrolled .hamburger path {
 }
 
 .count-circle {
-    width: 270px;
+    position: relative;
     height: 270px;
-    border-radius: 50%;
-    border: 20px solid #151515;
 }
 
 .output-carousel {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+    max-width: 1836px;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-.carousel-content {
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    padding: 0;
+}
+
+.carousel-item {
+    flex: 0 0 33.33%; /* 기본적으로 3개를 표시 */
+    padding: 10px;
     width: 580px;
     height: 580px;
-    background-color: #151515;
+    list-style: none;
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.carousel-content {
-    background-color: #151515;
+.carousel-item a {
+    text-decoration: none;
+}
+
+.carousel-text {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    line-height: 24px;
+    padding: 16px 0;
+}
+
+.output-date {
+    font-size: 14px;
+    color: #ffffffd2;
+}
+
+.carousel-pic {
+    width: 580px;
+    height: 580px;
+}
+
+.carousel-pic > img,
+.carousel-pic > video {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    object-position: center; 
+    display: block;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 8px;
+}
+
+.next-btn {
+    right: 8px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #ffffffd2;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #FF1493;
 }
 
 .end-content-area {
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 80px;
+    width: 100%;
+    position: relative;
 }
 
 .logo-end {
@@ -514,6 +667,9 @@ header.scrolled .hamburger path {
     background-size: cover;
     width: 500px;
     height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-end-text {
@@ -526,6 +682,27 @@ header.scrolled .hamburger path {
     aspect-ratio: 522 / 172;
 }
 
+.come-with-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    gap: 8px;
+    color: #fff;
+}
+
+.interactive-text {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에서 올라오는 효과 */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.interactive-text.in {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 이동 */
+}
+
 .contact {
     display: flex;
     flex-direction: column;
@@ -536,26 +713,34 @@ header.scrolled .hamburger path {
 .contact h2 {
     font-size: 40px;
     font-weight: bold;
-}
-
-.contact p {
-    font-size: 20px;
+    color: #fff;
 }
 
 .address p {
     font-size: 20px;
     text-align: center;
     line-height: 28px;
+    color: #ffffffd2;
 }
 
 .address strong {
     font-weight: 600;
+    color: #ffffffd2;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .copy {
-    margin-top: 48px;
     font-size: 16px;
     font-weight: 600;
+    color: #ffffffd2;
+    text-align: center;
 }
 
 .to-left {
@@ -578,4 +763,12 @@ header.scrolled .hamburger path {
 .in {
     opacity: 1;
     transform: none;
+}
+
+.br-1024 {
+    display: none;
+}
+
+.br-419 {
+    display: none;
 }

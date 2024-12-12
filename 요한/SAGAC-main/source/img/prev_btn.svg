@@ -1,0 +1,8 @@
+<svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0, 0, 0, 0.5)" />
+    </filter>
+</defs>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.629312 12.2566L12.7837 -0.000187188L15.8218 3.06348L5.18641 13.7885L15.8218 24.5135L12.7837 27.5771L0.629311 15.3203C0.226518 14.914 0.000241034 14.363 0.000241084 13.7885C0.000241134 13.214 0.226519 12.663 0.629312 12.2566Z" fill="black" filter="url(#drop-shadow)"/>
+</svg>

@@ -2,11 +2,14 @@
 <!-- Generator: Adobe Illustrator 27.4.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 514.8 524.37" style="enable-background:new 0 0 514.8 524.37;" xml:space="preserve">
+<filter id="glow">
+	<feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="rgba(255, 255, 255, 0.8)" />
+</filter>
 <style type="text/css">
-	.st0{fill:#040000;}
-	.st1{fill:none;stroke:#040000;stroke-width:7;stroke-miterlimit:10;}
+	.st0{fill:#fff;}
+	.st1{fill:none;stroke:#151515;stroke-width:7;stroke-miterlimit:10;}
 </style>
-<g>
+<g filter="url(#glow)">
 	<path class="st0" d="M345.68,139.91c9.63-3.84,19.66-14.89,22.07-18.06c5.96-7.84,8.16-16.26,6.52-25.03
 		c-3.42-18.28-23.11-32.8-34.55-39.83l0,0c-6.26-3.85-12.8-7.1-19.48-9.96c7.11-8.86,23.34-25.58,50.44-35.12L366.58,0.3
 		c-33.3,11.72-51.62,32.89-58.3,42.02c-8.46-3.07-17.04-5.72-25.49-8.33c-7.36-2.27-14.97-4.63-22.24-7.19

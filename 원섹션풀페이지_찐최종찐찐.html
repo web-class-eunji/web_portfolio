@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overflow: hidden;
+            }
+
+            .intro {
+                width: 100%;
+                height: 100vh;
+                background-color: pink;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                transition: 1s;
+            }
+
+            .test {
+                width: 500px;
+                height: 500px;
+                border: 2px solid red;
+            }
+
+            .wrap {
+                height: 10000px;
+                background-image: linear-gradient(#fff, #000);
+                transition: 1s;
+
+                transform: translateY(100vh);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="intro">
+            <div class="test"></div>
+        </div>
+        <div class="wrap">
+            <section>1섹션</section>
+            <section>2섹션</section>
+        </div>
+        <script>
+            const intro = document.querySelector(".intro");
+            const wrap = document.querySelector(".wrap");
+
+            let isIntro = true;
+            let moving = false;
+
+            checkScroll();
+
+            function checkScroll() {
+                if (window.scrollY !== 0) {
+                    scrollStart(false);
+                    isIntro = false;
+                }
+            }
+
+            function scrollStart(transition = true) {
+                if (!moving) {
+                    moving = true;
+                    setTimeout(() => {
+                        moving = false;
+                    }, 1000);
+
+                    if (transition) {
+                        intro.style.transition = "1s";
+                        wrap.style.transition = "1s";
+                    } else {
+                        intro.style.transition = "none";
+                        wrap.style.transition = "none";
+                    }
+
+                    intro.style.transform = `translateY(-100%)`;
+                    wrap.style.transform = `translateY(0)`;
+
+                    setTimeout(
+                        () => {
+                            document.body.style.overflow = "auto";
+                        },
+                        transition ? 1000 : 0
+                    );
+                }
+            }
+
+            function returnIntro() {
+                if (!moving) {
+                    moving = true;
+                    setTimeout(() => {
+                        moving = false;
+                    }, 1000);
+
+                    document.body.style.overflow = "hidden";
+                    intro.style.transition = "1s";
+                    wrap.style.transition = "1s";
+                    intro.style.transform = `translateY(0)`;
+                    wrap.style.transform = `translateY(100vh)`;
+                }
+            }
+
+            window.addEventListener("mousewheel", (e) => {
+                if (isIntro && e.deltaY > 0) {
+                    setTimeout(() => {
+                        isIntro = false;
+                    }, 1000);
+                    scrollStart(true);
+                    console.log("아래로는 내렸다");
+                }
+
+                if (window.scrollY === 0 && !isIntro && e.deltaY < 0) {
+                    setTimeout(() => {
+                        isIntro = true;
+                    }, 1000);
+                    returnIntro();
+                    console.log("위로는 올렸다");
+                }
+            });
+        </script>
+    </body>
+</html>
