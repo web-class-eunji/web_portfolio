@@ -1,0 +1,26 @@
+.advantages-motto-fade-slides {
+    width: 531px;
+    height: 538px;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 531px;
+    height: 538px;
+    opacity: 0;
+    z-index: 1;
+    transition: 1s;
+    color: #fff;
+    font-size: 48px;
+    box-sizing: border-box;
+  }
+
+  .showing {
+    opacity: 1;
+    z-index: 99;
+  }
+
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="type-text">당신의 멋집 열정을</h1>
+
+  <script>
+    let typeText = document.querySelector(".type-text")
+    let textToBeTypedArr = ["응원합니다", "이곳에다가 작성하면", "잘 나올겁니다."]
+    let index = 0, isAdding = true, textToBeTypedIndex = 0
+    playAnim()
+
+
+    function playAnim() {
+    setTimeout(function () {
+        typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+        if (isAdding) {
+            if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+                isAdding = false
+                typeText.classList.add("showAnim")
+                setTimeout(function () {
+                    typeText.classList.remove("showAnim")
+                    playAnim()
+                }, 2000)
+                return
+            } else {
+                index++
+            }
+        } else {
+            if (index === 0) {
+                isAdding = true
+                textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+            } else {
+                index--
+            }
+        }
+        playAnim()
+    }, isAdding ? 120 : 60)
+}
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        
+.best-selling-page {
+    display: flex;
+    gap: 100px;
+}
+
+.best-selling-img-group {
+    width: 50%;
+    flex-shrink: 0;
+    /* text 크기 때문에 줄어들지 않도록 보전시킴 */
+    background-color: var(--accent-color);
+
+    display: flex;
+    justify-content: end;
+    transition: top 0.3s ease-in-out; /* 리니어 이동 추가 */
+}
+
+.best-selling-text-group {
+    height: 100vh;
+    padding-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    position: sticky;
+    top: 0;
+
+}
+
+.best-selling-books-size {
+    width: 220px;
+}
+
+.best-selling-books-lt,
+.best-selling-books-Rt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.best-selling-img-group li {
+    width: 250px;
+    height: 375px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 60px 10px;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.best-selling-books-title {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+h7 {
+    color: #3c3c3c;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.best-selling-books-title a {
+    width: 110px;
+    height: 22px;
+    
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+.best-selling-books-title p{
+    font-size: 12px;
+    color: var(--accent-color);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-selling-books-title p:hover {
+    background-color: #FF6600;
+    color: #FFEFDD;
+
+    transition: 0.3s;
+}
+
+
+.best-selling-img-group {
+    width: 50%;
+    flex-shrink: 0;
+    background-color: var(--accent-color);
+
+    display: flex;
+    justify-content: end;
+
+    position: sticky;
+    top: 0;
+}
+
+/* 초기 상태 (이미지가 처음부터 보이게 설정) */
+.best-selling-books-lt li,
+.best-selling-books-Rt li {
+  opacity: 1;
+  transform: translateY(0); /* 처음에는 제자리에 있도록 */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 모션 추가 클래스 */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* 제자리에 머무름 */
+}
+
+/* .fade-in이 추가되기 전, 스크롤 시 약간의 이동 효과 */
+.best-selling-books-lt li.inactive,
+.best-selling-books-Rt li.inactive {
+  opacity: 0;  
+  transform: translateY(20px); /* 아래에서 위로 슬라이드 */
+}
+
+</style>
+
+
+<section>
+    <div class="best-selling-page">
+        <div class="best-selling-img-group">
+            <ul class="best-selling-books-lt">
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/고쟁이.png" alt="고쟁이">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>내신 + 유형 고쟁이</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/기출의바이블.png" alt="기출의바이블">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>고등 독서 기출의바이블</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/리얼기출3개년.png" alt="리얼기출 3개년">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>REAL 수능기출 9회</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/수학의바이블유형on.png" alt="수학의바이블">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>수학의바이블 유형on</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/2025마더텅 수능영어 모의고사.png" alt="마더텅 영어모의고사">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>마더텅 수능영어 모의고사</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/고듣끝.png" alt="고듣끝">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>고듣끝</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/매3문 비문학기출.png" alt="매3문 비문학기출">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>매3문 비문학기출</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/자이스토리 영어독해.png" alt="자이스토리영어독해">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>자이스토리 영어독해</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="best-selling-books-Rt">
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/리얼수능기츨모의고사.png" alt="리얼수능기출모의고사">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>REAL 수능기출모의고사</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/수학의바이블개념on.png" alt="수학의바이블개념">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>수학의바이블 개념on</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/아삽9.png" alt="아삽9">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>아삽9</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/수능직전봉투모의.png" alt="수능봉투모의고사">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>수능직전봉투모의고사</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/워드마스터.png" alt="워드마스터">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>Word master 수능2000</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/2025마더텅 모의고사 국어영역.png" alt="마더텅 국어">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>마더텅 고의고사 국어영역</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/매3문 문학기출.png" alt="매3문 문학">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>매3문 문학기출</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/2025마더텅 수능기출 국어독해.png" alt="마더텅 기출 국어독해">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>마더텅 수능기출 국어독해</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <figure class="best-selling-books-size">
+                        <img src="IMG/매3문문학.png" alt="매3문 문학">
+                    </figure>
+                    <div class="best-selling-books-title">
+                        <h7>매3문 문학</h7>
+                        <a href="#">
+                            <p>책정보 확인하기</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="best-selling-text-group">
+            <div class="section-title-zone title-array fadein fade to-right">
+                <h3>
+                    Best-selling books
+                </h3>
+                <h2>
+                    올해 학생들이<br>
+                    가장 많이 찾은 책을<br>
+                    추천해드립니다
+                </h2>
+            </div>
+            <a class="more-view fadein fade to-right" href="#">
+                <p>베스트셀러 더보기</p>
+                <div class="more-view-click">
+                    <figure>
+                        <img src="IMG/right_icon.svg" alt="right_icon">
+                    </figure>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<script>
+
+
+// JavaScript로 Intersection Observer 설정
+const imgGroups = document.querySelectorAll(".best-selling-books-lt li, .best-selling-books-Rt li");
+
+// 모든 이미지에 inactive 클래스를 추가해 처음에는 opacity 1로 보이도록 설정
+imgGroups.forEach(group => group.classList.add("inactive"));
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1 // 이미지가 10% 보이면 모션이 실행됨
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("inactive"); // inactive를 제거해 자연스럽게 fade-in 효과가 발생
+    }
+  });
+}, options);
+
+imgGroups.forEach(group => {
+  observer.observe(group);
+});
+
+
+</script>
+</html>
