@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Progress Bar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            /* 배경색 설정 */
+        }
+
+        .progress-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            /* 초기 크기 */
+            text-align: center;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 0;
+            /* 내부 여백 제거 */
+            overflow: hidden;
+        }
+
+        .progress-bar svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            /* -90도 회전하여 12시 방향에서 시작 */
+            overflow: visible;
+            /* 잘림 방지 */
+        }
+
+        .progress-bar circle {
+            fill: none;
+            stroke-width: 10;
+        }
+
+        .progress-bar circle:nth-child(1) {
+            stroke: #f0f0f0;
+            /* 프로그래스바 배경 */
+        }
+
+        .progress-bar circle:nth-child(2) {
+            stroke-dasharray: 628.3;
+            /* 원의 둘레 */
+            stroke-dashoffset: 628.3;
+            /* 초기 상태 */
+            transition: stroke-dashoffset 1s ease-out;
+        }
+
+        .text_zone {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .percentage {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .progress-bar.html circle:nth-child(2) {
+            stroke: #ff5733;
+        }
+
+        .progress-bar.css circle:nth-child(2) {
+            stroke: #8cdeff;
+        }
+
+        .progress-bar.javascript circle:nth-child(2) {
+            stroke: #ffeb33;
+        }
+
+        .progress-bar.figma circle:nth-child(2) {
+            stroke: #f8a7ff;
+        }
+
+        .progress-bar.photoshop circle:nth-child(2) {
+            stroke: #4290d6;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .progress-bar {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .progress-bar {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media screen and (max-width: 570px) {
+            .progress-bar {
+                width: 120px;
+                height: 120px;
+            }
+            .progress-container {
+                gap: 20px;
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            .progress-bar {
+                width: 110px;
+                height: 110px;
+            }
+            .progress-container {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-container">
+        <div class="progress-bar html" data-percentage="80">
+            <svg viewBox="0 0 220 220">
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 배경 원 -->
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 진행 원 -->
+            </svg>
+            <div class="text_zone">
+                <div class="label">HTML</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar css" data-percentage="70">
+            <svg viewBox="0 0 220 220">
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 배경 원 -->
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 진행 원 -->
+            </svg>
+            <div class="text_zone">
+                <div class="label">CSS</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar javascript" data-percentage="60">
+            <svg viewBox="0 0 220 220">
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 배경 원 -->
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 진행 원 -->
+            </svg>
+            <div class="text_zone">
+                <div class="label">JavaScript</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar figma" data-percentage="80">
+            <svg viewBox="0 0 220 220">
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 배경 원 -->
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 진행 원 -->
+            </svg>
+            <div class="text_zone">
+                <div class="label">Figma</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar photoshop" data-percentage="70">
+            <svg viewBox="0 0 220 220">
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 배경 원 -->
+                <circle cx="110" cy="110" r="100" stroke-width="10"></circle> <!-- 진행 원 -->
+            </svg>
+            <div class="text_zone">
+                <div class="label">Photoshop</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+
+            progressBars.forEach(bar => {
+                const percentage = bar.getAttribute('data-percentage'); // 퍼센티지 가져오기
+                const circle = bar.querySelector('circle:nth-child(2)'); // 진행 원 가져오기
+                const percentageLabel = bar.querySelector('.percentage'); // 퍼센티지 텍스트
+
+                const radius = circle.r.baseVal.value; // 반지름 가져오기
+                const circumference = 2 * Math.PI * radius; // 원 둘레 계산
+
+                circle.style.strokeDasharray = circumference; // 둘레 설정
+                circle.style.strokeDashoffset = circumference; // 초기 상태 설정
+
+                let currentPercentage = 0;
+
+                const updateProgress = setInterval(() => {
+                    if (currentPercentage >= percentage) {
+                        clearInterval(updateProgress); // 목표 퍼센티지에 도달하면 중지
+                    } else {
+                        currentPercentage++;
+                        const offset = circumference - (circumference * currentPercentage) / 100;
+                        circle.style.strokeDashoffset = offset; // 애니메이션
+                        percentageLabel.textContent = `${currentPercentage}%`; // 텍스트 업데이트
+                    }
+                }, 20); // 속도 조절
+            });
+        });
+    </script>
+</body>
+
+</html>

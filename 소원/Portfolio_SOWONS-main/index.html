@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/tab.menu.css">
+    <link rel="stylesheet" href="CSS/dot_navigation.css">
+    <link rel="stylesheet" href="CSS/circle_progress.css">
+    <link rel="stylesheet" href="CSS/media.css">
+    <link rel="stylesheet" href="CSS/scroll_fade_in.css">
+    <link rel="stylesheet" href="CSS/modal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Gowun+Batang&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Gowun+Batang&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section id="home" class="branding-page-container section">
+        <canvas id="starCanvas"></canvas>
+        <!-- canvas-이미지태그 같은거 -->
+        <div class="branding-page">
+            <div class="moving-text moving-left">
+                <span>#WELCOMTOMY PORTFOLIO #WEB PUBLISHER</span>
+                <span>#WELCOMTOMY PORTFOLIO #WEB PUBLISHER</span>
+            </div>
+            <div class="branding-tg">
+                <div class='typing'>
+                    <h1 class="text"></h1>
+                    PORTFOLIO
+                </div>
+                <p>
+                    안녕하세요. 현실에 안주하지 않고 도전하는 것을 좋아하며&#44; <br class="responsive-br">
+                    지속적으로 성장하고 있는
+                    <span>
+                        웹 퍼블리셔 김소원
+                    </span>
+                    입니다&#46;
+                </p>
+            </div>
+            <div class="scroll-down">
+                <p>Scroll Down</p>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+            <aside class="dot-navigation">
+                <div class="dot" data-target="home">Home</div>
+                <div class="dot" data-target="profile">Profile</div>
+                <div class="dot" data-target="resume">Resume</div>
+                <div class="dot" data-target="portfolio">Portfolio</div>
+                <div class="dot" data-target="contact">Contact</div>
+            </aside>
+            <div class="moving-text moving-right">
+                <span>#WELCOMTOMY PORTFOLIO #WEB PUBLISHER</span>
+                <span>#WELCOMTOMY PORTFOLIO #WEB PUBLISHER</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="profile" class="profile-page-container section">
+        <div class="profile-page">
+            <div class="h2-container fadein fade to-bottom">
+                <h2>PROFILE</h2>
+            </div>
+            <div class="detail-container">
+                <figure class="profile-img fadein fade to-left">
+                    <img src="IMG/증명사진.png" alt="증명사진">
+                </figure>
+                <div class="about-me-container fadein fade to-right">
+                    <h3>About me</h3>
+                    <ul class="about-me-tg">
+                        <li>
+                            <p>Name</p>
+                            <p>Kim So Won</p>
+                        </li>
+                        <li>
+                            <p>Birthday</p>
+                            <p>1992&#46; 09&#46; 18</p>
+                        </li>
+                        <li>
+                            <p>Certificate</p>
+                            <p>컴퓨터활용능력1급</p>
+                        </li>
+                        <li>
+                            <p>E&#45;mail</p>
+                            <p>kimso339&#64;naver&#46;com</p>
+                        </li>
+                    </ul>
+                    <p class="about-me-explain">
+                        &#34;도전을 멈추지 않는 신입 웹퍼블리셔 김소원입니다&#46;<br class="responsive-br">
+                        다양한 시맨틱 태그를 활용해 SEO를 고려한 마크업을 하며&#44;
+                        JS를 활용한 인터렉션 등 다양한 퍼블리싱 기술에 관심을 갖고 성장하고 있습니다&#46;&#34;
+                    </p>
+                </div>
+            </div>
+            <div class="skill-container fadein fade to-bottom">
+                <h3>Skill</h3>
+                <div class="progress-container">
+                    <div class="progress-bar html" data-percentage="80">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 배경 원 -->
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 진행 원 -->
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label">HTML</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar css" data-percentage="90">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 배경 원 -->
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 진행 원 -->
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label">CSS</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar javascript" data-percentage="70">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 배경 원 -->
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 진행 원 -->
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label">JavaScript</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar figma" data-percentage="80">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 배경 원 -->
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 진행 원 -->
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label">Figma</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar photoshop" data-percentage="80">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 배경 원 -->
+                            <circle cx="110" cy="110" r="100" stroke-width="15"></circle> <!-- 진행 원 -->
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label">Photoshop</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="resume-page-container section">
+        <div class="resume-page">
+            <div class="h2-container fadein fade to-bottom">
+                <h2>RESUME</h2>
+            </div>
+            <div class="tabs fadein fade to-bottom">
+                <button class="tab-btn active" data-tab="1">
+                    Work&#45;Experience
+                </button>
+                <button class="tab-btn" data-tab="2">
+                    Self&#45;Introduction
+                </button>
+                <button class="tab-btn" data-tab="3">
+                    Character
+                </button>
+            </div>
+            <div class="tab-contents fadein fade to-bottom">
+                <div class="tab-content active" id="tab-1">
+                    <ul class="work-experience">
+                        <li class="line-vertical">
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                2014&#46;05&#126;2016&#46;05
+                            </p>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        국민건강보험공단 일산병원
+                                    </span>
+                                    <br class="responsive-br-500">
+                                    &#40;간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-long">
+                            <p class="date">
+                                2017&#46;02&#126;2018&#46;07
+                            </p>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        신촌세브란스병원
+                                    </span>
+                                    <br class="responsive-br-500">
+                                    &#40;심장혈환병원 연구간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                2021&#46;04&#126;2023&#46;04
+                            </p>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        가톨릭대학교 은평성모병원
+                                    </span>
+                                    <br class="responsive-br-500">
+                                    &#40;간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-long">
+                            <p class="date">
+                                2024&#46;04&#126;2024&#46;12
+                            </p>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        sbs컴퓨터아카데미학원
+                                    </span>
+                                    <br class="responsive-br-500">
+                                    &#40;웹퍼블리셔 과정 수강&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                &#126;현재
+                            </p>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        웹퍼블리셔 입사 준비중
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab-2">
+                    <ul class="self-introduction">
+                        <li>
+                            <p>
+                                &#34;기본에 충실하게&#34;
+                            </p>
+                            <span>
+                                화려한 도구없이 망치와 못으로만 집을 지을 수 있어야 <br class="responsive-br-introduction">
+                                역량이 큰 사람이라는 선생님의 말씀을 새기며<br>
+                                기본에 충실히 공부하였습니다.
+                                시맨틱 코드를 이용해<br class="responsive-br-introduction"> 유지보수가 쉬운 마크업을 위해 노력합니다.
+                            </span>
+                        </li>
+                        <li>
+                            <p>
+                                &#34;끈기있게 도전하기&#34;
+                            </p>
+                            <span>
+                                현재에 안주하기보다 지속적으로 도전하며<br class="responsive-br-introduction">
+                                트렌드를 파악하고 습득하려 노력하겠습니다.<br>
+                                Vue, React에 관심을 가지고 있습니다.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab-3">
+                    <div class="character">
+                        <ul>
+                            <li class="pentagon">
+                                <img src="IMG/오각형.png" alt="pentagon-shape">
+                            </li>
+                            <li class="character1">
+                                빠른 업무속도
+                            </li>
+                            <li class="character2">
+                                다양한 퍼블리싱<br>
+                                기술에 관심
+                            </li>
+                            <li class="character3">
+                                강한 책임감
+                            </li>
+                            <li class="character4">
+                                트렌드에 민감함
+                            </li>
+                            <li class="character5">
+                                도전하는 자세
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-page-container section">
+        <div class="portfolio-page">
+            <div class="h2-container fadein fade to-bottom">
+                <h2>PORTFOLIO</h2>
+            </div>
+            <div class="project">
+                <div class="project-tg fadein fade to-left">
+                    <h2 class="project-name">At Search</h2>
+                    <p>홈페이지 신규구축</p>
+                    <p class="explain">
+                        입시를 위한 정보들을 한 곳에서 확인 할 수 있는<br>
+                        홈페이지를 반응형으로 구축하였습니다&#46;<br>
+                        정보전달을 유리하게 하기 위해 깔끔한 UI로<br>
+                        퍼블리싱 작업을 하는 것에 중점을 두었습니다&#46;<br>
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="category">사용툴</p>
+                            <p>Visual Studio Code &#47; Figma</p>
+                        </li>
+                        <li>
+                            <p class="category">기여도</p>
+                            <p>기획 &#47; 디자인 &#47; 퍼블리싱 100&#37;</p>
+                        </li>
+                        <li>
+                            <p class="category">사이즈</p>
+                            <p>반응형 웹사이트</p>
+                        </li>
+                    </ul>
+                    <div class="view-button wrapper at_search_button">
+                        <button class="link-button" onclick="openModal('site1')">VIEW</button>
+                    </div>
+                </div>
+                <figure class="imac fadein fade to-right">
+                    <img src="IMG/iMac.png" alt="imac-img">
+                    <div class="imac-inner">
+                        <img class="imac-inner-img" src="IMG/atsearch.png" alt="at-search-fullpage">
+                    </div>
+                </figure>
+            </div>
+
+            <div class="project furniture">
+                <figure class="imac fadein fade to-left">
+                    <img src="IMG/iMac.png" alt="imac-img">
+                    <div class="imac-inner">
+                        <img class="imac-inner-img" src="IMG/furnitureLab.png" alt="furnitureLab-full-page">
+                    </div>
+                </figure>
+                <div class="project-tg furniture-tg fadein fade to-right">
+                    <h2 class="project-name furniture-color">Furniture<br> Lab</h2>
+                    <p>홈페이지 리뉴얼</p>
+                    <p class="explain">
+                        현재 트렌드에 맞게 자연과 일상의 조화와<br>
+                        여유로운 분위기를 강조하였으며&#44;<br>
+                        시맨틱 코드를 사용하여 구조적인<br>
+                        웹페이지를 축하였습니다&#46;<br>
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="category">사용툴</p>
+                            <p>Visual Studio Code &#47; Figma</p>
+                        </li>
+                        <li>
+                            <p class="category">기여도</p>
+                            <p>기획 &#47; 디자인 &#47; 퍼블리싱 100&#37;</p>
+                        </li>
+                        <li>
+                            <p class="category">사이즈</p>
+                            <p>반응형 웹사이트</p>
+                        </li>
+                    </ul>
+                    <div class="view-button wrapper furniture-button">
+                        <button class="link-button" onclick="openModal('site2')">VIEW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 모달창 -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-button" onclick="closeModal()">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-page-container section">
+        <div class="contact-page">
+            <div class="h2-container fadein fade to-bottom">
+                <h2>CONTACT</h2>
+            </div>
+            <div class="contact-tg fadein fade to-bottom">
+                <p>Thank you for watching</p>
+                <p>함께 일할 웹퍼블리셔를 찾고 계시다면 연락주세요</p>
+            </div>
+            <div class="contact-information fadein fade to-bottom">
+                <p>Let’s work together</p>
+                <ul>
+                    <li class="fadein fade to-left">
+                        <button class="learn-more">
+                            <p class="number">01</p>
+                            <span class="contact-way">
+                                <p>E&#45;mail</p>
+                                <p>kimso339&#64;naver&#46;com</p>
+                            </span>
+                        </button>
+                    </li>
+                    <li class="fadein fade to-right">
+                        <button class="learn-more">
+                            <p class="number">02</p>
+                            <span class="contact-way">
+                                <p>Cell&#45;Phone</p>
+                                <p>+82&#45;10&#45;3201&#45;3393</p>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+    </script>
+    <script src="JS/tab_menu.js"></script>
+    <script src="JS/star_bg.js"></script>
+    <script src="JS/dot_navigation.js"></script>
+    <script src="JS/circle_progress.js"></script>
+    <script src="JS/scroll_fade_in.js"></script>
+    <script src="JS/typing.js"></script>
+    <script src="JS/modal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+.tabs {
+    height: 50px;
+    width: 100%;
+    gap: 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.tab-contents {
+    width: 100%;
+}
+
+.tabs button {
+    padding: 10px;
+    color: var(--accent-color);
+    font-size: 22px;
+    border: none;
+    border-bottom: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+    cursor: pointer;
+}
+
+.tabs button.active {
+    color: var(--main-text-color);
+    border-color: var(--main-text-color);
+}
+
+.tab-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+.tab-content.active {
+    opacity: 1;
+    height: auto;
+}
+
+.tabs button:hover{
+    color: var(--main-text-color)
+}
+
+.tabs button:hover {
+    border-bottom: 2px solid var(--main-text-color);
+}
+
+

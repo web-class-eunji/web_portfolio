@@ -1,0 +1,992 @@
+:root {
+    --background-color: #000000;
+    --main-text-color: #F7F7F7;
+    --sub-text-color: #C7C7C7;
+    --accent-color: #7D7D7D;
+    --shadow-color: #3E3E3E;
+}
+
+
+body {
+    font-family: "Crimson Pro";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* <weight>: Use a value from 200 to 900 */
+
+    font-family: "Noto Sans KR";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* <weight>: Use a value from 100 to 900 */
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+body>section {
+    padding: 0 32px;
+    background-color: var(--background-color);
+}
+
+#starCanvas {
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+
+.branding-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.branding-tg {
+    width: 100%;
+    padding-left: 10%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.branding-tg::after {
+    content: '';
+    background-color: var(--accent-color);
+    width: 600px;
+    height: 1px;
+    position: absolute;
+    top: 70%;
+}
+
+/* keyframe까지 타이핑버전 */
+
+
+.typing {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    color: var(--main-text-color);
+    font-family: "Crimson Pro";
+    font-size: 90px;
+    font-weight: 800;
+    height: 180px;
+}
+
+.text::after {
+    content: '';
+    margin-left: .4rem;
+    border-right: 2px solid #777;
+    animation: cursor .9s infinite steps(2);
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid #222;
+    }
+
+    to {
+        border-right: 2px solid #777;
+    }
+}
+
+
+
+
+
+h1 {
+    font-size: 100px;
+    color: var(--main-text-color);
+    font-family: "Crimson Pro";
+    font-weight: 800;
+}
+
+h1>span {
+    color: var(--accent-color);
+}
+
+.branding-tg>p {
+    color: var(--accent-color);
+    font-size: 22px;
+    font-weight: 600px;
+    line-height: 36px;
+}
+
+.branding-tg>p>span {
+    color: var(--main-text-color);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.moving-text {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
+    /* overflow: hidden; */
+}
+
+.moving-text span {
+    display: inline-block;
+    font-size: 130px;
+    font-weight: 600;
+    color: #131313;
+}
+
+.moving-left span {
+    animation: moveLeft 20s linear infinite;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* 한 텍스트 길이만큼 왼쪽으로 이동 */
+    }
+}
+
+.moving-right span {
+    animation: moveRight 20s linear infinite;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-70%);
+        /* 시작 위치 */
+    }
+
+    to {
+        transform: translateX(0);
+        /* 한 텍스트 길이만큼 오른쪽으로 이동 */
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+.scroll-down>p {
+    color: var(--main-text-color);
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.mouse {
+    width: 20px;
+    height: 30px;
+    border: 1px solid var(--main-text-color);
+    border-radius: 16px;
+    box-sizing: border-box;
+    position: relative;
+    animation: mouse-animation 2s infinite;
+}
+
+.wheel {
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-text-color);
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    animation: wheel-animation infinite 2s;
+}
+
+@keyframes mouse-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    33% {
+        top: 0;
+        opacity: 1;
+        transform: scale(1);
+
+    }
+
+    66% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 10px;
+        opacity: 0;
+    }
+}
+
+@keyframes wheel-animation {
+    33% {
+        top: 25%;
+    }
+
+    66% {
+        top: 75%;
+    }
+
+    100% {
+        top: 75%;
+    }
+}
+
+.profile-page {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.h2-container {
+    padding: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+h2 {
+    font-size: 52px;
+    font-family: "Crimson Pro";
+    font-weight: 800;
+    color: var(--main-text-color);
+}
+
+.h2-container>h2::first-letter {
+    color: var(--accent-color);
+}
+
+.profile-img {
+    width: 280px;
+    height: 350px;
+}
+
+.profile-img>img {
+    border-radius: 20px;
+}
+
+.detail-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--main-text-color);
+    font-weight: 700;
+}
+
+.about-me-container {
+    max-width: 400px;
+    height: 100%;
+    padding: 30px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-me-tg {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-me-tg>li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--main-text-color);
+    font-size: 22px;
+}
+
+.about-me-tg p:last-child {
+    color: var(--sub-text-color);
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.about-me-explain {
+    color: var(--accent-color);
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.skill-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.resume-page {
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* .standard-box {
+    width: 100%;
+    position: relative;
+} */
+/* before, after가 반응형때 중구난방이라 박스로 하나 감싸주어 기준점을 통일시킴 */
+
+.work-experience {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.work-experience::after {
+    content: 'Work- \A Experience';
+    font-size: 80px;
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-style: italic;
+    color: var(--shadow-color);
+    width: 300px;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+}
+
+.work-experience>li {
+    position: relative;
+}
+
+.line-vertical::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 480px;
+    background-color: var(--accent-color);
+    position: absolute;
+    left: 30%;
+}
+
+.date {
+    color: var(--accent-color);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.company-name {
+    color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.company-name>span {
+    color: var(--main-text-color);
+}
+
+.line-short>.date,
+.line-short>.company {
+    position: relative;
+    left: 37%;
+}
+
+.line-long>.date,
+.line-long>.company {
+    position: relative;
+    left: 57%
+}
+
+.line-short::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--main-text-color);
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.line-short::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: var(--main-text-color);
+    position: absolute;
+    left: 30%;
+    top: 52%;
+}
+
+.line-long::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--main-text-color);
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.line-long::before {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: var(--main-text-color);
+    position: absolute;
+    left: 30%;
+    top: 52%;
+}
+
+.responsive-br-500 {
+    display: none;
+}
+
+.self-introduction {
+    width: 100%;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+.self-introduction::before {
+    content: 'Self-Introduction';
+    font-size: 80px;
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-style: italic;
+    color: var(--shadow-color);
+    position: absolute;
+    top: 0%;
+    left: 10%;
+}
+
+.self-introduction::after {
+    content: '';
+    display: block;
+    width: 1200px;
+    height: 1px;
+    background-color: var(--accent-color);
+    position: absolute;
+    top: 30%;
+}
+
+.self-introduction>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--main-text-color);
+}
+
+.self-introduction>li>p {
+    font-size: 22px;
+}
+
+.self-introduction>li>span {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-weight: 300;
+    text-align: center;
+}
+
+.responsive-br-introduction {
+    display: none;
+}
+
+.character {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.character>ul {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+.character::after {
+    content: 'Character';
+    font-size: 80px;
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-style: italic;
+    color: var(--shadow-color);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.character li {
+    position: absolute;
+    color: var(--main-text-color);
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.pentagon {
+    width: 260px;
+    height: 260px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.character1 {
+    top: 10%;
+    left: 45%;
+}
+
+.character2 {
+    top: 35%;
+    left: 24%;
+}
+
+.character3 {
+    bottom: 22%;
+    left: 31%;
+}
+
+.character4 {
+    bottom: 22%;
+    right: 28%;
+}
+
+.character5 {
+    top: 36%;
+    right: 25%;
+}
+
+.portfolio-page-container {
+    overflow: hidden;
+}
+
+.portfolio-page {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+    position: relative;
+}
+
+.project {
+    width: 1000px;
+    display: flex;
+    gap: 50px;
+}
+
+.portfolio-page::before {
+    content: 'Responsive \A Website';
+    width: 300px;
+    color: var(--shadow-color);
+    font-family: "Crimson Pro";
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 130px;
+    font-style: italic;
+    position: absolute;
+    top: 15%;
+    left: 63%;
+}
+
+.project-tg {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.project-name {
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-size: 80px;
+    color: #FF6600;
+}
+
+.project-tg>p {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--main-text-color);
+}
+
+.project-tg>.explain {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--accent-color);
+    text-align: right;
+    line-height: 22px;
+}
+
+.project-tg>ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-tg>ul>li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-tg>ul p {
+    color: var(--main-text-color);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.project-tg>ul .category {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.view-button {
+    width: 100%;
+    height: fit-content;
+}
+
+.at_search_button .link-button {
+    display: block;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent; 
+    color: #FF6600;
+    border: 2px solid #FF6600;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        transform: skewX(-45deg) translateX(0);
+        transition: none;
+    }
+
+    &:hover {
+        background-color: #FF6600;
+        color: #fff;
+        /* border-bottom: 4px solid #662900; */
+
+        &:before {
+            transform: skewX(-45deg) translateX(23em);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+
+.furniture-button .link-button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent; 
+    color: #008314;
+    border: 2px solid #008314;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        transform: skewX(-45deg) translateX(0);
+        transition: none;
+    }
+
+    &:hover {
+        background-color: #008314;
+        color: #fff;
+        /* border-bottom: 4px solid #662900; */
+
+        &:before {
+            transform: skewX(-45deg) translateX(23em);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.imac {
+    width: 450px;
+    height: 387px;
+    position: relative;
+}
+
+.imac-inner {
+    width: 430px;
+    height: 235px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+.imac-inner:hover .imac-inner-img {
+    transition: 5s;
+    transform: translateY(calc(-100% + 235px));
+}
+
+.furniture {
+    justify-content: end;
+}
+
+.furniture-color {
+    line-height: 60px;
+    color: #008314
+}
+
+.furniture-tg {
+    align-items: start;
+}
+
+.furniture-tg>.explain {
+    text-align: left;
+}
+
+.furniture::before {
+    content: 'Responsive \A Website';
+    width: 300px;
+    color: var(--shadow-color);
+    font-family: "Crimson Pro";
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 130px;
+    font-style: italic;
+    position: absolute;
+    left: 10%;
+    bottom: 2%;
+}
+
+.contact-page-container {
+    overflow: hidden;
+}
+
+.contact-page {
+    width: 100%;
+    padding: 100px 0;
+    box-sizing: border-box;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+.contact-tg>p {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 40px;
+}
+
+.contact-tg>p:last-child {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.contact-information>p {
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-size: 100px;
+    font-style: italic;
+    color: var(--accent-color);
+    line-height: 120px;
+}
+
+.contact-information>ul {
+    /* width: 750px; */
+    padding-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.contact-information li {
+    width: 300px;
+    height: 100px;
+}
+
+.number {
+    padding: 10px;
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-size: 80px;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.contact-way {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.contact-way p {
+    color: var(--main-text-color);
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: lowercase;
+    /* 버튼은 기본이 대문자 - 소문자: lowercase/첫문자만 대문자:capitalize */
+}
+
+.contact-way p:last-child {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+
+.learn-more {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+
+    display: flex;
+    align-items: center;
+
+
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    background: #161616;
+    /* $light-pink; */
+    border: 2px solid #3b3b3b;
+    /* $pink-border; */
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #232323;
+        /* $dark-pink; */
+        border-radius: inherit;
+        
+        box-shadow: 0 0 0 2px #3b3b3b, 0 0.625em 0 0 #101010;
+        /* $pink-border,$pink-shadow; */
+        transform: translate3d(0, 0.75em, -1em);
+        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    }
+
+    &:hover {
+        background: #1e1e1e;
+        /* $pink; */
+        transform: translate(0, 0.25em);
+
+        &::before {
+            box-shadow: 0 0 0 2px #3b3b3b, 0 0.5em 0 0 #101010;
+            /* $pink-border,$pink-shadow; */
+            transform: translate3d(0, 0.5em, -1em);
+        }
+    }
+/* https://inpa.tistory.com/entry/CSS-%F0%9F%92%8D-%EB%B2%84%ED%8A%BC-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%AA%A8%EC%9D%8C */
+    &:active {
+        background: #242424;
+        /* $pink; */
+        transform: translate(0em, 0.75em);
+
+        &::before {
+            box-shadow: 0 0 0 2px #3b3b3b, 0 0 #101010;
+            /* $pink-border,$pink-shadow; */
+            transform: translate3d(0, 0, -1em);
+        }
+    }
+
+}
